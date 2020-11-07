@@ -2,7 +2,6 @@ require 'spec_helper'
 require_relative '../lib/eman_fraction'
 
 RSpec.describe Fraction do
-
   describe '+' do
     it 'adds proper and improper fractions' do
       four_fifths = Fraction.new(numerator: 4, denominator: 5)
@@ -47,6 +46,53 @@ RSpec.describe Fraction do
       one_half = Fraction.new(numerator: 5, denominator: 10)
 
       expect(one_half + one_half).to eq(1)
+    end
+  end
+
+  describe '-' do
+    it 'does simple subtraction' do
+      one_third = Fraction.new(numerator: 1, denominator: 3)
+      two_thirds = Fraction.new(numerator: 2, denominator: 3)
+
+      expect(two_thirds - one_third).to eq Fraction.new(numerator: 1, denominator: 3)
+    end
+
+    it 'subtracts fractions with different denominators' do
+      five_sevenths = Fraction.new(numerator: 5, denominator: 7)
+      one_third = Fraction.new(numerator: 1, denominator: 3)
+
+      expect(five_sevenths - one_third).to eq Fraction.new(numerator: 8, denominator: 21)
+    end
+
+    it 'subtract fractions that result in negative values' do
+      five_sevenths = Fraction.new(numerator: 5, denominator: 7)
+      one_third = Fraction.new(numerator: 1, denominator: 3)
+
+      expect(one_third - five_sevenths).to eq Fraction.new(numerator: -8, denominator: 21)
+    end
+
+    it 'subtracting the same fraction results in zero' do
+      one_third = Fraction.new(numerator: 1, denominator: 3)
+
+      expect(one_third - one_third).to eq 0
+    end
+
+    it 'returns the fraction when subtracting zero' do
+      one_third = Fraction.new(numerator: 1, denominator: 3)
+
+      expect(one_third - 0).to eq Fraction.new(numerator: 1, denominator: 3)
+    end
+
+    it 'negates the fraction when subtracting from zero' do
+      one_third = Fraction.new(numerator: 1, denominator: 3)
+
+      expect(0 - one_third).to eq Fraction.new(numerator: -1, denominator: 3)
+    end
+
+    it 'subtracts from integers' do
+      one_third = Fraction.new(numerator: 1, denominator: 3)
+
+      expect(5 - one_third).to eq Fraction.new(numerator: 14, denominator: 3)
     end
   end
 end
