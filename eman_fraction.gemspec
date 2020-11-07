@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name  = 'Eman_Fraction'
-  s.version = '0.0.0'
+  s.version = '0.0.1'
   s.date = '2020-11-06'
   s.summary = 'A library that implements Faction arithmetic'
   s.description = "This is part of the course:" \

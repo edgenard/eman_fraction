@@ -7,6 +7,7 @@ class Fraction < Numeric
   end
 
   def +(other)
+    return 0 if zeros?(other) # Don't really know how to deal with this otherwise
     self_numerator = numerator * other.denominator
     other_numerator = other.numerator * denominator
     self.class.new(numerator: self_numerator + other_numerator, denominator: other.denominator * denominator)
@@ -31,5 +32,10 @@ class Fraction < Numeric
 
   def factors(number)
     (1..number).select {|x| number % x == 0 }
+  end
+
+  def zeros?(other)
+    (other.zero? || (other.numerator.zero? && other.denominator.zero?)) && 
+    (self.numerator.zero? && self.denominator.zero?)
   end
 end
