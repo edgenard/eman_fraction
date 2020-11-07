@@ -1,6 +1,8 @@
 class Fraction < Numeric
   attr_reader :numerator, :denominator
   def initialize(numerator:, denominator:)
+    raise InvalidFraction, 'denominator cannot be zero' if denominator.zero?
+
     @numerator = numerator
     @denominator = denominator
     simplify
@@ -11,7 +13,11 @@ class Fraction < Numeric
 
     self_numerator = numerator * other.denominator
     other_numerator = other.numerator * denominator
-    self.class.new(numerator: self_numerator + other_numerator, denominator: other.denominator * denominator)
+    new_fraction = self.class.new(numerator: self_numerator + other_numerator, denominator: other.denominator * denominator)
+
+    return 0 if new_fraction.numerator.zero?
+
+    new_fraction
   end
 
   def -(other)
@@ -51,5 +57,7 @@ class Fraction < Numeric
   def zeros?(other)
     (other.zero? || (other.numerator.zero? && other.denominator.zero?)) &&
       (numerator.zero? && denominator.zero?)
+  end
+  class InvalidFraction < StandardError
   end
 end
