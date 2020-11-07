@@ -7,5 +7,6 @@ Gem::Specification.new do |s|
                    "The World's Best Intro to TDD, Level 1: TDD Done Right"
   s.authors = ["Emmanuel Genard"]
   s.files = ["lib/eman_fraction.rb"]
+  s.homepage = 'https://github.com/edgenard/eman_fraction'
   s.license = 'MIT'
 end

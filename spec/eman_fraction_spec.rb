@@ -4,7 +4,7 @@ require_relative '../lib/eman_fraction'
 RSpec.describe Fraction do
 
   describe '+' do
-    it 'adds proper and improer fractions' do
+    it 'adds proper and improper fractions' do
       four_fifths = Fraction.new(numerator: 4, denominator: 5)
       seven_thirds = Fraction.new(numerator: 7, denominator: 3)
 
@@ -28,6 +28,12 @@ RSpec.describe Fraction do
       one_third = Fraction.new(numerator: 1, denominator: 3)
 
       expect(one_third + one_third).to eq Fraction.new(numerator: 2, denominator: 3)
+    end
+
+    it 'handles zeros' do
+      zero = Fraction.new(numerator: 0, denominator: 0)
+
+      expect(zero + 0).to eq Fraction.new(numerator: 0, denominator: 0)
     end
   end
 end
