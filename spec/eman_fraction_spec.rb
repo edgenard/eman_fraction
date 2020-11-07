@@ -25,9 +25,10 @@ RSpec.describe Fraction do
     end
 
     it 'represents fractions in the lowest terms' do
-      one_third = Fraction.new(numerator: 1, denominator: 3)
+      five_ninths = Fraction.new(numerator: 5, denominator: 9)
+      eleven_twefths = Fraction.new(numerator: 11, denominator: 12)
 
-      expect(one_third + one_third).to eq Fraction.new(numerator: 2, denominator: 3)
+      expect(five_ninths + eleven_twefths).to eq Fraction.new(numerator: 53, denominator: 36)
     end
 
     it 'handles zeros' do
