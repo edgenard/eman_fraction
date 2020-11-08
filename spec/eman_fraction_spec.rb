@@ -23,6 +23,13 @@ RSpec.describe Fraction do
       expect(sum.denominator).to eq(expected_sum.denominator)
     end
 
+    it 'fractions with different denominators' do
+      sum = Fraction.new(1,2) + Fraction.new(1,4)
+      expected_sum = Fraction.new(3,4)
+
+      expect(sum.numerator).to eq(expected_sum.numerator)
+      expect(sum.denominator).to eq(expected_sum.denominator)
+    end
   end
 
 end
