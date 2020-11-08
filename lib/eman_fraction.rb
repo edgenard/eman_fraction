@@ -8,13 +8,15 @@ class Fraction
 
   def +(other)
     if denominator >= other.denominator
-      common_factor =  denominator/other.denominator
-      numerator_sum = numerator + (other.numerator * common_factor)
-      Fraction.new(numerator_sum, denominator)
+      smallest_common_multiple =  denominator / other.denominator
+      numerator_sum = numerator + (other.numerator * smallest_common_multiple)
+      common_denominator = denominator
     else
-      common_factor = other.denominator / denominator
-      numerator_sum = (numerator * common_factor) + other.numerator
-      Fraction.new(numerator_sum, other.denominator)
+      smallest_common_multiple = other.denominator / denominator
+      numerator_sum = (numerator * smallest_common_multiple) + other.numerator
+      common_denominator = other.denominator
     end
+
+    Fraction.new(numerator_sum, common_denominator)
   end
 end
