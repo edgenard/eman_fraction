@@ -38,6 +38,14 @@ RSpec.describe Fraction do
       expect(sum.numerator).to eq(expected_sum.numerator)
       expect(sum.denominator).to eq(expected_sum.denominator)
     end
+
+    it 'fractions where neither denominator is a multiple of the other' do
+      sum = Fraction.new(1,4) + Fraction.new(5,6)
+      expected_sum = Fraction.new(13,12)
+
+      expect(sum.numerator).to eq(expected_sum.numerator)
+      expect(sum.denominator).to eq(expected_sum.denominator)
+    end
   end
 
 end
