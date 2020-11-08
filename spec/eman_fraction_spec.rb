@@ -7,13 +7,13 @@ RSpec.describe Fraction do
     it 'zero plus zero equals zero' do
       sum = Fraction.new(0) + Fraction.new(0)
 
-      expect(sum.number).to eq(Fraction.new(0).number)
+      expect(sum.numerator).to eq(Fraction.new(0).numerator)
     end
 
     it 'zero plus three equals three' do
       sum = Fraction.new(0) + Fraction.new(3)
 
-      expect(sum.number).to eq(Fraction.new(3).number)
+      expect(sum.numerator).to eq(Fraction.new(3).numerator)
     end
 
     it 'simple fractions with the same denominator' do
