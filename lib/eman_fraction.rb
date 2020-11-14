@@ -1,9 +1,10 @@
 class Fraction
+  attr_reader :numerator
   def initialize(numerator)
-
+    @numerator = numerator
   end
 
   def +(other)
-    0
+    numerator + other.numerator
   end
 end
