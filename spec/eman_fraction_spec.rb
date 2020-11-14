@@ -15,5 +15,12 @@ RSpec.describe Fraction do
 
       expect(one + zero).to eq 1
     end
+
+    it 'adds non-zero integers' do
+      four = Fraction.new(4)
+      nine = Fraction.new(9)
+
+      expect(four + nine).to eq 13
+    end
   end
 end
