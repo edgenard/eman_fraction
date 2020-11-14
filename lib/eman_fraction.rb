@@ -6,11 +6,20 @@ class Fraction
   end
 
   def +(other)
-    self.class.new(numerator + other.numerator, denominator)
+    if denominator == other.denominator
+      self.class.new(numerator + other.numerator, denominator)
+    else
+      (numerator * other.denominator) + (other.numerator * denominator)
+    end
   end
 
 
   def ==(other)
     other.numerator == numerator
+  end
+
+
+  def coerce(other)
+    [self.class.new(other), self]
   end
 end
