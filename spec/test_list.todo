@@ -9,11 +9,12 @@ Addition:
   - 2.1 + 1/2 -> Error can't add floats?
   - -3/7 + 1/7 = -2/7 @done
   - 1/5 + 2/5 = 3/5 @done
-  - 2.2 == 11/5??(maybe out scope)
-  - 1/6 !== 1/3 @done
   - 5/9 + 5/12 =  35/36 @done
-  Constructor:
-    - 2/0 -> Error @done
-    - 2/1 == 2
-    - 5/-7 == -5/7
-    - 2.0/3 --> Error only accepts integers
+Constructor:
+  - 2/0 -> Error @done
+  - 2/1 == 2
+  - 5/-7 == -5/7 @done
+  - -3/-8 == 3/8
+  - 2.0/3 --> Error only accepts integers
+Equality:
+  - 1/6 !== 1/3 @done

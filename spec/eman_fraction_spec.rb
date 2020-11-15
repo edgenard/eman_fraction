@@ -5,7 +5,11 @@ RSpec.describe Fraction do
 
   describe 'new' do
     it 'raises an error if denominator is zero' do
-      expect { Fraction.new(2, 0)}.to raise_error(Fraction::InvalidDenominator)
+      expect { Fraction.new(2, 0) }.to raise_error(Fraction::InvalidDenominator)
+    end
+
+    it 'assigns the sign to the numerator' do
+      expect(Fraction.new(5,-7)).to eq Fraction.new(-5, 7)
     end
   end
 
@@ -53,7 +57,7 @@ RSpec.describe Fraction do
       expect(Fraction.new(1,3)).to eq Fraction.new(1,3)
     end
 
-    it 'fractions with different values are equal' do
+    it 'fractions with different values are not equal' do
       expect(Fraction.new(1, 4)).not_to eq Fraction.new(1, 5)
     end
   end

@@ -24,8 +24,13 @@ class Fraction
 
   def simplify(numerator, denominator)
     greatest_common_divisor = numerator.gcd(denominator)
-    @numerator = numerator / greatest_common_divisor
-    @denominator = denominator / greatest_common_divisor
+    if denominator < 0
+      @numerator = - numerator / greatest_common_divisor
+      @denominator = (denominator / greatest_common_divisor).abs
+    else
+      @numerator = numerator / greatest_common_divisor
+      @denominator = denominator / greatest_common_divisor
+    end
   end
 
   class InvalidDenominator < StandardError
