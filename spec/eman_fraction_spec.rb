@@ -45,6 +45,11 @@ RSpec.describe Fraction do
 
       expect(sum).to eq(Fraction.new(13,12))
     end
-  end
 
+    it 'can be compared to a whole number' do
+      sum = Fraction.new(1, 2) + Fraction.new(1, 2)
+
+      expect(sum).to eq(1)
+    end
+  end
 end
