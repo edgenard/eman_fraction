@@ -3,6 +3,12 @@ require_relative '../lib/eman_fraction'
 
 RSpec.describe Fraction do
 
+  describe 'new' do
+    it 'raises an error if denominator is zero' do
+      expect { Fraction.new(2, 0)}.to raise_error(Fraction::InvalidDenominator)
+    end
+  end
+
   describe '+' do
     it 'adds integers' do
       four = Fraction.new(4)

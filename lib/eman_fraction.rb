@@ -1,6 +1,7 @@
 class Fraction
   attr_reader :numerator, :denominator
   def initialize(numerator, denominator = 1)
+    raise InvalidDenominator if denominator == 0
     simplify(numerator, denominator)
   end
 
@@ -25,5 +26,8 @@ class Fraction
     greatest_common_divisor = numerator.gcd(denominator)
     @numerator = numerator / greatest_common_divisor
     @denominator = denominator / greatest_common_divisor
+  end
+
+  class InvalidDenominator < StandardError
   end
 end
