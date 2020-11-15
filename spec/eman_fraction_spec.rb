@@ -26,4 +26,14 @@ RSpec.describe Fraction do
       expect(5 + four_thirds).to eq nineteen_thirds
     end
   end
+
+  describe '==' do
+    it 'fractions with the same value are equal' do
+      expect(Fraction.new(1,3)).to eq Fraction.new(1,3)
+    end
+
+    it 'fractions with different values are equal' do
+      expect(Fraction.new(1, 4)).not_to eq Fraction.new(1, 5)
+    end
+  end
 end

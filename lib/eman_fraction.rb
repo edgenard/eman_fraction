@@ -9,13 +9,15 @@ class Fraction
     if denominator == other.denominator
       self.class.new(numerator + other.numerator, denominator)
     else
-      (numerator * other.denominator) + (other.numerator * denominator)
+      new_numerator = (numerator * other.denominator) + (other.numerator * denominator)
+      new_denominator = (denominator * other.denominator)
+      self.class.new(new_numerator, new_denominator)
     end
   end
 
 
   def ==(other)
-    other.numerator == numerator
+    other.numerator == numerator && denominator == other.denominator
   end
 
 
