@@ -13,46 +13,37 @@ RSpec.describe Fraction do
     it 'zero plus three equals three' do
       sum = Fraction.new(0) + Fraction.new(3)
 
-      expect(sum.numerator).to eq(Fraction.new(3).numerator)
+      expect(sum).to eq(Fraction.new(3))
     end
 
     it 'simple fractions with the same denominator' do
       sum = Fraction.new(1,7) + Fraction.new(3,7)
-      expected_sum = Fraction.new(4,7)
-      expect(sum.numerator).to eq(expected_sum.numerator)
-      expect(sum.denominator).to eq(expected_sum.denominator)
+
+      expect(sum).to eq(Fraction.new(4, 7))
     end
 
     it 'fractions with different denominators where the first denominator is smaller' do
       sum = Fraction.new(1,2) + Fraction.new(1,4)
-      expected_sum = Fraction.new(3,4)
 
-      expect(sum.numerator).to eq(expected_sum.numerator)
-      expect(sum.denominator).to eq(expected_sum.denominator)
+      expect(sum).to eq(Fraction.new(3,4))
     end
 
     it 'fractions with different denominators where the first denominator is larger' do
       sum = Fraction.new(5,6) + Fraction.new(1,3)
-      expected_sum = Fraction.new(7,6)
 
-      expect(sum.numerator).to eq(expected_sum.numerator)
-      expect(sum.denominator).to eq(expected_sum.denominator)
+      expect(sum).to eq(Fraction.new(7,6))
     end
 
     it 'reduces fractions to lowest terms' do
       sum = Fraction.new(2,4) + Fraction.new(0)
-      expected_sum = Fraction.new(1,2)
 
-      expect(sum.numerator).to eq(expected_sum.numerator)
-      expect(sum.denominator).to eq(expected_sum.denominator)
+      expect(sum).to eq(Fraction.new(1, 2))
     end
 
     it 'fractions where neither denominator is a multiple of the other' do
       sum = Fraction.new(1,4) + Fraction.new(5,6)
-      expected_sum = Fraction.new(13,12)
 
-      expect(sum.numerator).to eq(expected_sum.numerator)
-      expect(sum.denominator).to eq(expected_sum.denominator)
+      expect(sum).to eq(Fraction.new(13,12))
     end
   end
 
