@@ -32,6 +32,14 @@ RSpec.describe Fraction do
 
       expect(one_sixth + one_sixth).to eq one_third
     end
+
+    it 'does complex addition' do
+      five_ninths = Fraction.new(5, 9)
+      five_twefths = Fraction.new(5,12)
+      thirty_fifth_thirty_sixths = Fraction.new(35,36)
+
+      expect(five_ninths + five_twefths).to eq thirty_fifth_thirty_sixths
+    end
   end
 
   describe '==' do
