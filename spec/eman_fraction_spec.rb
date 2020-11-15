@@ -51,5 +51,11 @@ RSpec.describe Fraction do
 
       expect(sum).to eq(1)
     end
+
+    it 'can be added to a whole number' do
+      sum = 5 + Fraction.new(3, 7)
+
+      expect(sum).to eq(Fraction.new(38, 7))
+    end
   end
 end

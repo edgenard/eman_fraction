@@ -17,4 +17,8 @@ class Fraction
   def ==(other)
     numerator == other.numerator && denominator == other.denominator
   end
+
+  def coerce(other)
+    [Fraction.new(other), self]
+  end
 end
