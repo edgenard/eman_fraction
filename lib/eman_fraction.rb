@@ -1,9 +1,7 @@
 class Fraction
   attr_reader :numerator, :denominator
   def initialize(numerator, denominator = 1)
-    @numerator = numerator
-    @denominator = denominator
-    simplify
+    simplify(numerator, denominator)
   end
 
   def +(other)
@@ -27,9 +25,9 @@ class Fraction
   end
 
 
-  def simplify
+  def simplify(numerator, denominator)
     greatest_common_divisor = numerator.gcd(denominator)
-    @numerator = self.numerator / greatest_common_divisor
-    @denominator = self.denominator / greatest_common_divisor
+    @numerator = numerator / greatest_common_divisor
+    @denominator = denominator / greatest_common_divisor
   end
 end
