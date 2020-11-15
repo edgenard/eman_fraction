@@ -13,4 +13,8 @@ class Fraction
 
     Fraction.new(numerator_sum, common_denominator)
   end
+
+  def ==(other)
+    numerator == other.numerator && denominator == other.denominator
+  end
 end
