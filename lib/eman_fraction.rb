@@ -3,6 +3,7 @@ class Fraction
   def initialize(numerator, denominator = 1)
     @numerator = numerator
     @denominator = denominator
+    simplify
   end
 
   def +(other)
@@ -23,5 +24,12 @@ class Fraction
 
   def coerce(other)
     [self.class.new(other), self]
+  end
+
+
+  def simplify
+    greatest_common_divisor = numerator.gcd(denominator)
+    @numerator = self.numerator / greatest_common_divisor
+    @denominator = self.denominator / greatest_common_divisor
   end
 end

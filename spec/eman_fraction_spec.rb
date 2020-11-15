@@ -25,6 +25,13 @@ RSpec.describe Fraction do
 
       expect(5 + four_thirds).to eq nineteen_thirds
     end
+
+    it 'returns the fraction in the lowest terms' do
+      one_sixth = Fraction.new(1,6)
+      one_third = Fraction.new(1,3)
+
+      expect(one_sixth + one_sixth).to eq one_third
+    end
   end
 
   describe '==' do
