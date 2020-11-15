@@ -11,6 +11,10 @@ RSpec.describe Fraction do
     it 'assigns the sign to the numerator' do
       expect(Fraction.new(5,-7)).to eq Fraction.new(-5, 7)
     end
+
+    it 'constructs fraction with the right sign' do
+      expect(Fraction.new(-3, -8)).to eq Fraction.new(3,8)
+    end
   end
 
   describe '+' do
