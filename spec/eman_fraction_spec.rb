@@ -6,6 +6,10 @@ RSpec.describe Fraction do
     it 'properly signs fractions' do
       expect(Fraction.new(1, -3)).to eq(Fraction.new(-1, 3))
     end
+
+    it 'turns floats into fractions' do
+      expect(Fraction.new(1.5)).to eq(Fraction.new(3,2))
+    end
   end
   describe '+' do
     it 'zero plus zero equals zero' do

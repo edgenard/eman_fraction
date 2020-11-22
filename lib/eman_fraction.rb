@@ -2,10 +2,11 @@ class Fraction
   attr_reader :numerator, :denominator
 
   def initialize(numerator, denominator = 1)
-    gcd = numerator.gcd(denominator)
-    lowest_term_numerator = numerator / gcd
-    @numerator = denominator.negative? ? -lowest_term_numerator : lowest_term_numerator
-    @denominator = (denominator / gcd).abs
+    if numerator.is_a? Float
+      convert_to_lowest_terms(numerator.numerator, numerator.denominator)
+    else
+      convert_to_lowest_terms(numerator, denominator)
+    end
   end
 
   def +(other)
@@ -21,5 +22,15 @@ class Fraction
 
   def coerce(other)
     [Fraction.new(other), self]
+  end
+
+  def convert_to_lowest_terms(numerator, denominator)
+    gcd = numerator.gcd(denominator)
+    @numerator = properly_sign(numerator, denominator) / gcd
+    @denominator = (denominator / gcd).abs
+  end
+
+  def properly_sign(numerator, denominator)
+    denominator.negative? ? - numerator : numerator
   end
 end
