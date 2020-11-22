@@ -3,8 +3,9 @@ class Fraction
 
   def initialize(numerator, denominator = 1)
     gcd = numerator.gcd(denominator)
-    @numerator = numerator / gcd
-    @denominator = denominator / gcd
+    lowest_term_numerator = numerator / gcd
+    @numerator = denominator.negative? ? -lowest_term_numerator : lowest_term_numerator
+    @denominator = (denominator / gcd).abs
   end
 
   def +(other)

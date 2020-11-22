@@ -2,7 +2,11 @@ require 'spec_helper'
 require_relative '../lib/eman_fraction'
 
 RSpec.describe Fraction do
-
+  describe '.new' do
+    it 'properly signs fractions' do
+      expect(Fraction.new(1, -3)).to eq(Fraction.new(-1, 3))
+    end
+  end
   describe '+' do
     it 'zero plus zero equals zero' do
       sum = Fraction.new(0) + Fraction.new(0)
