@@ -61,5 +61,10 @@ RSpec.describe Fraction do
 
       expect(sum).to eq(Fraction.new(38, 7))
     end
+
+    it 'can add negative fractions' do
+      sum = Fraction.new(-5, 8) + Fraction.new(1, -3)
+      expect(sum).to eq(Fraction.new(-23, 24))
+    end
   end
 end
