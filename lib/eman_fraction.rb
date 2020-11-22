@@ -1,8 +1,8 @@
 class Fraction
   attr_reader :numerator, :denominator
 
-  def initialize(numerator, denominator = 1)
-    if numerator.is_a? Float
+  def initialize(numerator, denominator = nil)
+    if denominator.nil?
       convert_to_lowest_terms(numerator.numerator, numerator.denominator)
     else
       convert_to_lowest_terms(numerator, denominator)
