@@ -1,0 +1,17 @@
+class Fraction
+  attr_reader numerator: Integer | Float
+
+  attr_reader denominator: Integer
+
+  def initialize: (Integer | Float numerator, ?Integer? denominator) -> void
+
+  def +: (Integer | Float other) -> Fraction
+
+  def ==: (Integer | Float | Fraction other) -> (TrueClass | FalseClass)
+
+  def coerce: (Integer | Float other) -> ::Array[Fraction]
+
+  def convert_to_lowest_terms: (Integer numerator, Integer denominator) -> void
+
+  def properly_sign: (untyped numerator, untyped denominator) -> untyped
+end

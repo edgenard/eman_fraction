@@ -1,6 +1,8 @@
-ruby '2.6.5'
+ruby '3.0.0'
 
 source 'https://rubygems.org'
 
-gem 'rerun'
+# gem 'rerun'
 gem 'rspec'
+gem 'rbs'
+gem 'steep'

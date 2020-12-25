@@ -10,6 +10,10 @@ RSpec.describe Fraction do
     it 'turns floats into fractions' do
       expect(Fraction.new(1.5)).to eq(Fraction.new(3,2))
     end
+
+    it 'coerces numerator if numerator is a float and denominator is given' do
+      expect(Fraction.new(1.5, 5)).to eq(Fraction.new(3, 5))
+    end
   end
   describe '+' do
     it 'zero plus zero equals zero' do

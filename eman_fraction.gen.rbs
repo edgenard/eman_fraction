@@ -1,0 +1,16 @@
+# Errors
+lib/eman_fraction.rb:14: [error] undefined method: Numeric#*
+lib/eman_fraction.rb:14: [error] undefined method: Numeric#*
+lib/eman_fraction.rb:14: [error] undefined method: Numeric#*
+
+# Classes
+class Fraction
+# def initialize: (Integer | Float numerator, ?Integer? denominator) -> void
+# def +: (Numeric other) -> Fraction
+# def ==: (untyped other) -> untyped
+# def coerce: (untyped other) -> ::Array[Fraction]
+# def convert_to_lowest_terms: (untyped numerator, untyped denominator) -> untyped
+# def properly_sign: (untyped numerator, untyped denominator) -> untyped
+  attr_reader numerator: Float | Integer | untyped
+  attr_reader denominator: Integer | untyped
+end

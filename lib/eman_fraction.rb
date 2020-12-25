@@ -5,7 +5,7 @@ class Fraction
     if denominator.nil?
       convert_to_lowest_terms(numerator.numerator, numerator.denominator)
     else
-      convert_to_lowest_terms(numerator, denominator)
+      convert_to_lowest_terms(numerator.numerator, denominator)
     end
   end
 
